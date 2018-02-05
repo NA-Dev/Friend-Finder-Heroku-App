@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matchmaker Survey</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>
+        <i class="glyphicon glyphicon-heart-empty"></i>
+         Matchmaker Survey
+      </h1>
+      <br>
+    </div>
+
+    <div>
+      <h2>Survey Questions</h2>
+      <hr>
+
+      <h3><strong>About You</strong></h3>
+      <h4>Name (Required)</h4>
+      <input type="text" id="name" class="form-control" required>
+
+      <h4>Link to Photo (Required)</h4>
+      <input type="text" id="photo" class="form-control" required>
+      <hr>
+
+      <h3><strong>Your Gender</strong></h3>
+      <select class="chosen-select" id="gender">
+        <option value=""></option>
+        <option value="1">Male</option>
+        <option value="2">Female</option>
+      </select>
+
+      <h3><strong>Preferred Mate Gender</strong></h3>
+      <select class="chosen-select" id="mateGender">
+        <option value=""></option>
+        <option value="1">Male</option>
+        <option value="2">Female</option>
+        <option value="3">No Preference</option>
+      </select>
+
+      <h3><strong>Question 1</strong></h3>
+      <h4>Would you prefer to go out or stay in on a Friday night?</h4>
+      <select class="chosen-select" id="q1">
+        <option value=""></option>
+        <option value="1">You couldn't drag me out on a Friday night</option>
+        <option value="2">I might go out, but only for a special occasion</option>
+        <option value="3">Eh, sometimes I go out, sometimes I stay in</option>
+        <option value="4">If I don't go out, I am a little disappointed</option>
+        <option value="5">I go out every Friday night, it is awesome</option>
+      </select>
+
+      <h3><strong>Question 2</strong></h3>
+      <h4>How do you feel about pets?</h4>
+      <select class="chosen-select" id="q2">
+        <option value=""></option>
+        <option value="1">Pets are gross, or I am very allergic</option>
+        <option value="2">Pets are OK, but I don't want to walk or play with them</option>
+        <option value="3">I only like some pets</option>
+        <option value="4">Most pets are great, but some species I don't care for</option>
+        <option value="5">Animals are better than humans</option>
+      </select>
+      
+      <h3><strong>Question 3</strong></h3>
+      <h4>The bartender asks, "What can I get you?"</h4>
+      <select class="chosen-select" id="q3">
+        <option value=""></option>
+        <option value="1">Just juice or a club soda</option>
+        <option value="2">Maybe a beer or a glass of wine</option>
+        <option value="3">I like a good martini or daquiri</option>
+        <option value="4">I'll take a mixed drink, maybe a few more later</option>
+        <option value="5">I'll take a shot, a mixed chaser, and keep 'em coming!</option>
+      </select>
+      
+      <h3><strong>Question 4</strong></h3>
+      <h4>What best describes your fashion strategy?</h4>
+      <select class="chosen-select" id="q4">
+        <option value=""></option>
+        <option value="1">I look awful so people will stop looking at me</option>
+        <option value="2">I look OK, but I don't try too hard</option>
+        <option value="3">I have my own style, who cares if others don't understand</option>
+        <option value="4">I try to look good, but my date doesn't need to be a fashionista</option>
+        <option value="5">I always look sharp, and my date should too</option>
+      </select>
+      
+      <h3><strong>Question 5</strong></h3>
+      <h4>What's for dinner most nights?</h4>
+      <select class="chosen-select" id="q5">
+        <option value=""></option>
+        <option value="1">Dinner? I skip that one. Food is evil.</option>
+        <option value="2">If it ain't in a box, it ain't for these chops</option>
+        <option value="3">I eat fast food a lot</option>
+        <option value="4">I cook at home most nights, and like to try new things</option>
+        <option value="5">I adhere to a strict diet (i.e. vegan, Adkins, paleo, gluten-free, etc.)</option>
+      </select>
+      
+      <h3><strong>Question 6</strong></h3>
+      <h4>What are your relationship goals?</h4>
+      <select class="chosen-select" id="q6">
+        <option value=""></option>
+        <option value="1">Please don't say that word again</option>
+        <option value="2">I might commit to the right person, but not for a long time</option>
+        <option value="3">Come what may, I'm not forcing anything</option>
+        <option value="4">I want to find the right person, propose romantically, then have a big wedding</option>
+        <option value="5">You like me right, let's elope tonight!</option>
+      </select>
+      
+      <h3><strong>Question 7</strong></h3>
+      <h4>How do you handle yourself during relationship conflicts?</h4>
+      <select class="chosen-select" id="q7">
+        <option value=""></option>
+        <option value="1">I don't put up with being challenged, I'll just find someone else</option>
+        <option value="2">We can argue if you like, but I'm probably in the right</option>
+        <option value="3">Let's be reasonable and talk it through</option>
+        <option value="4">I'm a little passive, but I still want my opinion respected</option>
+        <option value="5">I'll just change myself to eliminate the conflict</option>
+      </select>
+      
+      <h3><strong>Question 8</strong></h3>
+      <h4>What is your idea of fun?</h4>
+      <select class="chosen-select" id="q8">
+        <option value=""></option>
+        <option value="1">Painting models, playing board games, reading, or other hobbies</option>
+        <option value="2">Camping, hiking, gardening, anything outdoors</option>
+        <option value="3">Movies, plays, comedy or music shows</option>
+        <option value="4">Bar hopping, foodie culture, trivia nights, or team sports</option>
+        <option value="5">Driving a racecar, skydiving, or other thrill-seeking</option>
+      </select>
+      
+      <h3><strong>Question 9</strong></h3>
+      <h4>What are your spiritual beliefs?</h4>
+      <select class="chosen-select" id="q9">
+        <option value=""></option>
+        <option value="1">I am agnostic, athiest, or not very spiritual</option>
+        <option value="2">I believe in something, but it is hard to define</option>
+        <option value="3">It is very personal, I prefer not to say</option>
+        <option value="4">I belong to a religion more or less</option>
+        <option value="5">I am a devout believer, and have many spiritual practices</option>
+      </select>
+      
+      <h3><strong>Question 10</strong></h3>
+      <h4>What kind of news do you read / watch?</h4>
+      <select class="chosen-select" id="q10">
+        <option value=""></option>
+        <option value="1">News, I hate the news!</option>
+        <option value="2">Daily Show, The Guardian, Politico, Huff Post, or TYT</option>
+        <option value="4">Wall Street Journal, Google News, BBC, The Economist, or NPR</option>
+        <option value="3">CBS, NBC, CNN, MSNBC, New York Times, Washington Post, New Yorker, Bloomberg</option>
+        <option value="5">Fox, Breitbart, Glenn Beck, Rush Limbaugh, or Drudge Report</option>
+      </select>
+
+      <br>
+      <br>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+        <i class="glyphicon glyphicon-check"></i>
+       Submit</button>
+    </div>
+
+    <hr>
+    <footer class="footer">
+      <p>
+        <a href="/api/people">
+          API Singles List
+        </a>
+         | 
+        <a href="https://github.com/NA-Dev/Friend-Finder-Heroku-App">
+          Github Repo
+        </a>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="results-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title"><strong>You Are Most Compatible With...</strong></h2>
+          </div>
+          <div class="modal-body">
+            <h2 id="match-name"></h2>
+            <img id="match-img" src="" alt="https://goo.gl/images/rMJqe9">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+</body>
+
+  <script>
+    var validUrl = require('valid-url');
+
+    // Format selector boxes with JQuery Chosen
+    $(".chosen-select").chosen({width: "95%"});
+
+    // Capture the form inputs
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+
+      // Form and URL validation
+      function formIsValid() {
+        var photoURL = $("#photo").val();
+        var isValid = true;
+
+        $(".form-control, .chosen-select").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+
+        if (!validUrl.isUri(photoURL)) {
+            isValid = false;
+        }
+
+        return isValid;
+      }
+
+      // If all required fields are filled
+      if (formIsValid()) {
+        // Create an object for the user"s data
+        var userData = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+          ]
+        };
+
+        // AJAX post the data to the friends API.
+        $.post("/api/friends", userData, function(data) {
+
+          if (data) {
+            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+            $("#match-name").text(data.name);
+            $("#match-img").attr("src", data.photo);
+
+          } else {
+            $("#match-name").text(Sorry, no matches available);           
+          }
+
+          $("#results-modal").modal("toggle");
+        });
+
+      } else {
+        alert("Please fill out all fields including a valid photo URL before submitting!");
+      }
+    });
+  </script>
+</html>
