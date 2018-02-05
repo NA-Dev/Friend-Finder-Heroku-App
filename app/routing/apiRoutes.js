@@ -1,38 +1,38 @@
-
 var fs = require("fs");
-var server = require("./server");
-var people = [];
+var people = require("../data/people");
 
 // Routes
 // =============================================================
 
-app.get("/api/people", function(req, res) {
-  fs.readFile("../data/people.js", function(err, data) {
-    if (err) throw err;
-    console.log(data);
-    res.sendFile(data);
+module.exports = function(app) {
+
+  app.get("/api/people", function(req, res) {
+    console.log("api/people get");
+      res.json(people);
   });
-});
-
-app.post("/api/people", function(req, res) {
-  var newPerson = req.body;
-  var match = matchmaker(newPerson);
-
-  if (match) {
-    res.json(match);
-  } else {
-    res.json(false);
-  }
-
-  people.push(newPerson);
-
-  fs.write("../data/people.js", people, function(err) {
-    if (err) throw err;
-    console.log('Person added');
+  
+  app.post("/api/people", function(req, res) {
+    console.log("api/people post");
+    var newPerson = req.body;
+    var match = matchmaker(newPerson);
+  
+    if (match) {
+      res.json(match);
+    } else {
+      res.json(false);
+    }
+  
+    people.push(newPerson);
+  
+    // fs.write("/../data/people.js", people, function(err) {
+    //   if (err) throw err;
+    //   console.log('Person added');
+    // });
   });
-});
+}
 
 function matchmaker(newPerson) {
+  console.log("matchmaker");
   var gender = newPerson.scores[0];
   var genderPref = newPerson.scores[1];
   var candidates = [];

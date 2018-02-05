@@ -1,14 +1,17 @@
 // Routes
 // =============================================================
+var path = require("path");
 
-app.get("/:path?", function(req, res) {
-  var path = req.params.path;
-  
-  if (path === "survey") {
-    res.sendFile(path.join(__dirname, "survey.html"));
-  } 
-  
-  else {
-    res.sendFile(path.join(__dirname, "home.html"));
-  }
-});
+module.exports = function(app) {
+  app.get("/:word?", function(req, res) {
+    var word = req.params.word;
+    
+    if (word === "survey") {
+      res.sendFile(path.join(__dirname, "/../public/survey.html"));
+    } 
+    
+    else {
+      res.sendFile(path.join(__dirname, "/../public/home.html"));
+    }
+  });
+}

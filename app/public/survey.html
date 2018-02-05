@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matchmaker Survey</title>
+  
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
 
   <!-- Chosen -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
+  <!-- Survey Javascript -->
+  <script type="text/javascript" src="logic.js"></script>
 </head>
+
 <body>
   <div class="container">
     <div class="jumbotron">
@@ -208,73 +211,4 @@
     </div>
   
 </body>
-
-  <script>
-    var validUrl = require('valid-url');
-
-    // Format selector boxes with JQuery Chosen
-    $(".chosen-select").chosen({width: "95%"});
-
-    // Capture the form inputs
-    $("#submit").on("click", function(event) {
-      event.preventDefault();
-
-      // Form and URL validation
-      function formIsValid() {
-        var photoURL = $("#photo").val();
-        var isValid = true;
-
-        $(".form-control, .chosen-select").each(function() {
-          if ($(this).val() === "") {
-            isValid = false;
-          }
-        });
-
-        if (!validUrl.isUri(photoURL)) {
-            isValid = false;
-        }
-
-        return isValid;
-      }
-
-      // If all required fields are filled
-      if (formIsValid()) {
-        // Create an object for the user"s data
-        var userData = {
-          name: $("#name").val(),
-          photo: $("#photo").val(),
-          scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
-          ]
-        };
-
-        // AJAX post the data to the friends API.
-        $.post("/api/friends", userData, function(data) {
-
-          if (data) {
-            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-            $("#match-name").text(data.name);
-            $("#match-img").attr("src", data.photo);
-
-          } else {
-            $("#match-name").text(Sorry, no matches available);           
-          }
-
-          $("#results-modal").modal("toggle");
-        });
-
-      } else {
-        alert("Please fill out all fields including a valid photo URL before submitting!");
-      }
-    });
-  </script>
 </html>
