@@ -7,6 +7,7 @@ $("#submit").on("click", function(event) {
 
   // Form and URL validation
   function formIsValid() {
+    var photo = $("#photo")[0];
     var isValid = true;
 
     $(".form-control, .chosen-select").each(function() {
@@ -14,6 +15,10 @@ $("#submit").on("click", function(event) {
         isValid = false;
       }
     });
+
+    if (!photo.checkValidity()) {
+      isValid = false;
+    }
 
     return isValid;
   }
