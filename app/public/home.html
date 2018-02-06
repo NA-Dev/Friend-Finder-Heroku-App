@@ -3,41 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matchmaker App</title>
-  
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <title>Celebrity Matchmaker</title>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+  <!-- Bootstrap and JQuery-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
   <div class="container">
-    <div class="jumbotron">
-      <h1>
-        <i class="glyphicon glyphicon-heart-empty"></i>
-         Matchmaker App 
-      </h1>
+    <div class="jumbotron text-center">
+      <img class="img-fluid rounded mx-auto" src="matchmaker.gif" alt="">
       <hr>
-      <h2>Answer a few basic questions.</h2>
-      <h2>Then find the friend with the greatest compatibility!</h2>
+      <h3>Which celebrity are you destined to love?</h3>
       <br>
 
       <div>
         <a href="/survey">
-          <button type="button" class="btn btn-lg btn-primary">
-            <h4><i class="glyphicon glyphicon-list-alt"></i> Go to Survey</h4>
+          <button type="button" class="btn btn-lg btn-danger">
+            <h4><i class="fas fa-list-alt"></i> Go to Survey</h4>
           </button>
         </a>
       </div>
     </div>
+    <hr>
 
     <footer class="footer">
       <p>
         <a href="/api/people">
-          API Singles List
+          API Celebrity List
         </a>
          | 
         <a href="https://github.com/NA-Dev/Friend-Finder-Heroku-App">
@@ -46,6 +39,15 @@
       </p>
     </footer>
   </div>
-  
+ 
+  <!-- Bootstrap and JQuery-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome Icons-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
 </body>
+
 </html>

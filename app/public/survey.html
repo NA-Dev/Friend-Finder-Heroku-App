@@ -2,63 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Matchmaker Survey</title>
   
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-  <!-- Chosen -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-
-  <!-- Survey Javascript -->
-  <script type="text/javascript" src="logic.js"></script>
+  <!-- Reset and Bootstrap Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  
+  <!-- Chosen CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.3/chosen.min.css">
 </head>
 
 <body>
   <div class="container">
-    <div class="jumbotron">
-      <h1>
-        <i class="glyphicon glyphicon-heart-empty"></i>
-         Matchmaker Survey
-      </h1>
-      <br>
+    <div class="jumbotron text-center">
+      <img class="img-fluid rounded mx-auto" src="matchmaker.gif" alt="Heart">
     </div>
 
-    <div>
-      <h2>Survey Questions</h2>
+    <div class="form card-body">
+      <h2 class="card-title">Survey Questions</h2>
       <hr>
 
-      <h3><strong>About You</strong></h3>
-      <h4>Name (Required)</h4>
-      <input type="text" id="name" class="form-control" required>
+    
+      <label for="name">Name (Required)</label>
+      <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+      <br>
 
-      <h4>Link to Photo (Required)</h4>
-      <input type="text" id="photo" class="form-control" required>
-      <hr>
+      <label for="photo">Link to Photo (Required)</label>
+      <input type="text" id="photo" class="form-control" placeholder="http://www.photourl.com" required>
+      <br>
 
-      <h3><strong>Your Gender</strong></h3>
+      <label for="gender">Your Gender</label>
       <select class="chosen-select" id="gender">
         <option value=""></option>
         <option value="1">Male</option>
         <option value="2">Female</option>
       </select>
+      <br><br>
 
-      <h3><strong>Preferred Mate Gender</strong></h3>
-      <select class="chosen-select" id="mateGender">
+      <label for="matchGender">Preferred Match Gender</label>
+      <select class="chosen-select" id="matchGender">
         <option value=""></option>
         <option value="1">Male</option>
         <option value="2">Female</option>
         <option value="3">No Preference</option>
       </select>
+      <hr>
 
-      <h3><strong>Question 1</strong></h3>
-      <h4>Would you prefer to go out or stay in on a Friday night?</h4>
+      <h4><strong>Question 1</strong></h4>
+      <label>Would you prefer to go out or stay in on a Friday night?</label>
       <select class="chosen-select" id="q1">
         <option value=""></option>
         <option value="1">You couldn't drag me out on a Friday night</option>
@@ -67,9 +59,10 @@
         <option value="4">If I don't go out, I am a little disappointed</option>
         <option value="5">I go out every Friday night, it is awesome</option>
       </select>
+      <br><br>
 
-      <h3><strong>Question 2</strong></h3>
-      <h4>How do you feel about pets?</h4>
+      <h4><strong>Question 2</strong></h4>
+      <label>How do you feel about pets?</label>
       <select class="chosen-select" id="q2">
         <option value=""></option>
         <option value="1">Pets are gross, or I am very allergic</option>
@@ -78,9 +71,10 @@
         <option value="4">Most pets are great, but some species I don't care for</option>
         <option value="5">Animals are better than humans</option>
       </select>
+      <br><br>
       
-      <h3><strong>Question 3</strong></h3>
-      <h4>The bartender asks, "What can I get you?"</h4>
+      <h4><strong>Question 3</strong></h4>
+      <label>The bartender asks, "What can I get you?"</label>
       <select class="chosen-select" id="q3">
         <option value=""></option>
         <option value="1">Just juice or a club soda</option>
@@ -89,9 +83,10 @@
         <option value="4">I'll take a mixed drink, maybe a few more later</option>
         <option value="5">I'll take a shot, a mixed chaser, and keep 'em coming!</option>
       </select>
+      <br><br>
       
-      <h3><strong>Question 4</strong></h3>
-      <h4>What best describes your fashion strategy?</h4>
+      <h4><strong>Question 4</strong></h4>
+      <label>What best describes your fashion strategy?</label>
       <select class="chosen-select" id="q4">
         <option value=""></option>
         <option value="1">I look awful so people will stop looking at me</option>
@@ -100,20 +95,22 @@
         <option value="4">I try to look good, but my date doesn't need to be a fashionista</option>
         <option value="5">I always look sharp, and my date should too</option>
       </select>
+      <br><br>
       
-      <h3><strong>Question 5</strong></h3>
-      <h4>What's for dinner most nights?</h4>
+      <h4><strong>Question 5</strong></h4>
+      <label>What's for dinner most nights?</label>
       <select class="chosen-select" id="q5">
         <option value=""></option>
         <option value="1">Dinner? I skip that one. Food is evil.</option>
-        <option value="2">If it ain't in a box, it ain't for these chops</option>
-        <option value="3">I eat fast food a lot</option>
+        <option value="2">If it ain't from the ice box, it ain't for these chops</option>
+        <option value="3">I eat out a lot</option>
         <option value="4">I cook at home most nights, and like to try new things</option>
         <option value="5">I adhere to a strict diet (i.e. vegan, Adkins, paleo, gluten-free, etc.)</option>
       </select>
+      <br><br>
       
-      <h3><strong>Question 6</strong></h3>
-      <h4>What are your relationship goals?</h4>
+      <h4><strong>Question 6</strong></h4>
+      <label>What are your relationship goals?</label>
       <select class="chosen-select" id="q6">
         <option value=""></option>
         <option value="1">Please don't say that word again</option>
@@ -122,9 +119,10 @@
         <option value="4">I want to find the right person, propose romantically, then have a big wedding</option>
         <option value="5">You like me right, let's elope tonight!</option>
       </select>
+      <br><br>
       
-      <h3><strong>Question 7</strong></h3>
-      <h4>How do you handle yourself during relationship conflicts?</h4>
+      <h4><strong>Question 7</strong></h4>
+      <label>How do you handle yourself during relationship conflicts?</label>
       <select class="chosen-select" id="q7">
         <option value=""></option>
         <option value="1">I don't put up with being challenged, I'll just find someone else</option>
@@ -133,9 +131,10 @@
         <option value="4">I'm a little passive, but I still want my opinion respected</option>
         <option value="5">I'll just change myself to eliminate the conflict</option>
       </select>
-      
-      <h3><strong>Question 8</strong></h3>
-      <h4>What is your idea of fun?</h4>
+      <br><br>
+
+      <h4><strong>Question 8</strong></h4>
+      <label>What is your idea of fun?</label>
       <select class="chosen-select" id="q8">
         <option value=""></option>
         <option value="1">Painting models, playing board games, reading, or other hobbies</option>
@@ -144,9 +143,10 @@
         <option value="4">Bar hopping, foodie culture, trivia nights, or team sports</option>
         <option value="5">Driving a racecar, skydiving, or other thrill-seeking</option>
       </select>
-      
-      <h3><strong>Question 9</strong></h3>
-      <h4>What are your spiritual beliefs?</h4>
+      <br><br>
+
+      <h4><strong>Question 9</strong></h4>
+      <label>What are your spiritual beliefs?</label>
       <select class="chosen-select" id="q9">
         <option value=""></option>
         <option value="1">I am agnostic, athiest, or not very spiritual</option>
@@ -155,9 +155,10 @@
         <option value="4">I belong to a religion more or less</option>
         <option value="5">I am a devout believer, and have many spiritual practices</option>
       </select>
+      <br><br>
       
-      <h3><strong>Question 10</strong></h3>
-      <h4>What kind of news do you read / watch?</h4>
+      <h4><strong>Question 10</strong></h4>
+      <label>What kind of news do you read / watch?</label>
       <select class="chosen-select" id="q10">
         <option value=""></option>
         <option value="1">News, I hate the news!</option>
@@ -166,23 +167,21 @@
         <option value="3">CBS, NBC, CNN, MSNBC, New York Times, Washington Post, New Yorker, Bloomberg</option>
         <option value="5">Fox, Breitbart, Glenn Beck, Rush Limbaugh, or Drudge Report</option>
       </select>
-
-      <br>
-      <br>
+      <br><br>
   
       <!-- Submit Button -->
       <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
         <i class="glyphicon glyphicon-check"></i>
-       Submit</button>
+      Submit</button>
     </div>
 
     <hr>
     <footer class="footer">
       <p>
         <a href="/api/people">
-          API Singles List
+          API Celebrity List
         </a>
-         | 
+        | 
         <a href="https://github.com/NA-Dev/Friend-Finder-Heroku-App">
           Github Repo
         </a>
@@ -200,7 +199,7 @@
           </div>
           <div class="modal-body">
             <h2 id="match-name"></h2>
-            <img id="match-img" src="" alt="https://goo.gl/images/rMJqe9">
+            <img id="match-img" src="https://vignette.wikia.nocookie.net/community-sitcom/images/b/bd/Photo-Unavailable.jpg" alt="" style="width: 200px">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -210,5 +209,29 @@
       </div>
     </div>
   
+
+  <!-- Bootstrap and JQuery-->
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" 
+  integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" 
+  crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
+  integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" 
+  crossorigin="anonymous">
+  </script>
+  
+  <!-- JQuery Chosen -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.3/chosen.jquery.js"></script>
+
+  <!-- Survey Javascript -->
+  <script type="text/javascript" src="survey.js"></script>
+
+
 </body>
+
 </html>
