@@ -1,6 +1,5 @@
 // Format selector boxes with JQuery Chosen
 $(".chosen-select").chosen({width: "95%"});
-console.log("javascript run");
 
 // Capture the form inputs
 $("#submit").on("click", function(event) {
